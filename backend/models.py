@@ -38,6 +38,7 @@ class Destino(Base):
     ubicacion: Mapped[str | None] = mapped_column(String(255))
     horario: Mapped[str | None] = mapped_column(String(100))
     precio_entrada: Mapped[Decimal] = mapped_column(Numeric(10, 2), default=0)
+    actividad: Mapped[str | None] = mapped_column(String(100))
     id_categoria: Mapped[int] = mapped_column(ForeignKey("CATEGORIA.id_categoria"))
 
     categoria: Mapped[Categoria] = relationship()

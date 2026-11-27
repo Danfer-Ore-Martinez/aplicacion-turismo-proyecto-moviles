@@ -45,6 +45,7 @@ class DestinoBase(BaseModel):
     ubicacion: str | None = None
     horario: str | None = None
     precio_entrada: Decimal = Field(default=Decimal("0"), ge=0)
+    actividad: str | None = None
     id_categoria: int
 
 

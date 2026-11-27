@@ -41,6 +41,7 @@ CREATE TABLE DESTINO (
     ubicacion       NVARCHAR(255)     NULL,
     horario         NVARCHAR(100)     NULL,
     precio_entrada  DECIMAL(10,2)     NOT NULL CONSTRAINT DF_DESTINO_precio DEFAULT 0,
+    actividad       NVARCHAR(100)     NULL,
     id_categoria    INT               NOT NULL,
     CONSTRAINT PK_DESTINO PRIMARY KEY (id_destino),
     CONSTRAINT CK_DESTINO_precio CHECK (precio_entrada >= 0),
@@ -125,4 +126,28 @@ CREATE INDEX IX_DETALLE_destino        ON DETALLE_ITINERARIO (id_destino);
 CREATE INDEX IX_VALORACION_usuario     ON VALORACION (id_usuario);
 CREATE INDEX IX_VALORACION_destino     ON VALORACION (id_destino);
 CREATE INDEX IX_FAVORITO_destino       ON FAVORITO (id_destino);
+GO
+
+/* ---------- Datos semilla: Categorías ---------- */
+INSERT INTO CATEGORIA (nombre, descripcion) VALUES
+('Natural',     'Destinos de naturaleza y paisajes'),
+('Cultural',    'Destinos culturales e históricos'),
+('Religioso',   'Destinos de carácter religioso'),
+('Aventura',    'Destinos para deportes extremos y aventura'),
+('Enoturismo',  'Destinos relacionados con vinos y piscos');
+GO
+
+/* ---------- Datos semilla: Destinos ---------- */
+INSERT INTO DESTINO (nombre, descripcion, ubicacion, horario, precio_entrada, actividad, id_categoria) VALUES
+('Laguna de Huacachina',             'Oasis natural rodeado de dunas, ideal para sandboard y paseos en tubular.',          'Huacachina, Ica, Perú',            'Abierto todo el día',       0, 'Sandboarding',                  1),
+('Parque Temático de Cachiche',      'Parque temático basado en leyendas locales, con la famosa escultura de la bruja de Cachiche.', 'Cachiche, Ica, Perú',     '8:00 AM - 6:00 PM',        0, 'Cultura y leyendas',            2),
+('Hacienda Tacama',                  'La bodega más antigua de América, especializada en la producción de vinos y piscos premium.', 'La Tacama, Ica, Perú',    '9:00 AM - 5:00 PM',        0, 'Cata de vinos y piscos',        5),
+('Cañón de los Perdidos',            'Impresionante cañón con paredes de roca ideales para rappel, caminatas y deportes extremos.', 'Los Aquijes, Ica, Perú',  '7:00 AM - 4:00 PM',        0, 'Rappel y aventura',             4),
+('Santuario del Señor de Luren',     'Templo principal de Ica que alberga la imagen del Señor de Luren, patrón de la ciudad.',    'Centro de Ica, Perú',     '6:00 AM - 8:00 PM',        0, 'Peregrinación religiosa',       3),
+('Bosque de Piedras',                'Formaciones rocosas naturales con figuras caprichosas esculpidas por el viento y el tiempo.', 'Subtanjalla, Ica, Perú',  '8:00 AM - 5:00 PM',        0, 'Caminata y exploración',        1),
+('Palmera de las 7 Cabezas',         'Palmera datilera única en el mundo con siete cabezas, considerada patrimonio natural de Ica.',  'San Juan Bautista, Ica, Perú', 'Abierto todo el día',    0, 'Visita histórica',              2),
+('Fiesta de la Vendimia',            'Celebración anual en honor a la cosecha de uva, con elección de reina, desfiles y degustación de vinos.', 'Plaza de Armas de Ica, Perú', 'Marzo (evento anual)',  0, 'Festival y celebración',        2),
+('Procesión del Señor de Luren',     'Tradición religiosa centenaria donde la imagen del Señor de Luren recorre las calles de Ica.',  'Centro de Ica, Perú',     'Septiembre (evento anual)', 0, 'Procesión religiosa',           3),
+('Museo Adolfo Bermúdez Jenkins',    'Museo regional que alberga una importante colección arqueológica de las culturas Paracas, Nazca e Ica.', 'Centro de Ica, Perú', '8:00 AM - 5:00 PM', 0, 'Visita cultural y arqueológica', 2),
+('Parque de la Palma',               'Parque ubicado frente a la Universidad Nacional San Luis Gonzaga, conocido por su emblemática palmera.', 'Frente a la UNICA, Ica, Perú', 'Abierto todo el día', 0, 'Descanso y recreación', 1);
 GO

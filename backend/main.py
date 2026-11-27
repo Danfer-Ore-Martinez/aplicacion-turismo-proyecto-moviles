@@ -58,6 +58,17 @@ def raiz():
     return {"mensaje": "API de itinerarios funcionando"}
 
 
+@app.get("/health", tags=["Salud"])
+def health_check():
+    return {"status": "ok"}
+
+
+@app.get("/v1/models", tags=["Salud"])
+def list_models():
+    """Endpoint compatible con OpenAI. Usado por herramientas de IA locales."""
+    return {"object": "list", "data": []}
+
+
 @app.get("/salud/bd", tags=["Salud"])
 def probar_bd(db: Session = Depends(get_db)):
     db.execute(select(1))
@@ -122,7 +133,10 @@ def listar_destinos(
     if id_categoria is not None:
         consulta = consulta.where(models.Destino.id_categoria == id_categoria)
     if buscar:
-        consulta = consulta.where(models.Destino.nombre.contains(buscar))
+        consulta = consulta.where(
+            models.Destino.nombre.contains(buscar)
+            | models.Destino.actividad.contains(buscar)
+        )
     return db.scalars(consulta).all()
 
 
