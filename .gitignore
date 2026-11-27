@@ -1,0 +1,88 @@
+# =====================================================
+# .gitignore de la RAÍZ del proyecto
+# Cubre: app Flutter (aplicacion_movil_turismo/), backend FastAPI (backend/)
+# y archivos generales del repositorio.
+# =====================================================
+
+# ---------- Miscellaneous ----------
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+Thumbs.db
+.atom/
+.build/
+.buildlog/
+.history
+.svn/
+.swiftpm/
+migrate_working_dir/
+
+# ---------- IDEs ----------
+# IntelliJ / Android Studio
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# VS Code: descomenta si no quieres versionar launch.json / tasks.json
+
+
+# ---------- Flutter / Dart / Pub ----------
+# Con "**/" las reglas funcionan aunque el proyecto Flutter
+# esté dentro de una subcarpeta (aplicacion_movil_turismo/).
+**/doc/api/
+**/ios/Flutter/.last_build_id
+**/ios/Flutter/ephemeral/
+**/ios/Pods/
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.pub-cache/
+.pub/
+**/build/
+**/coverage/
+
+# Symbolication related
+app.*.symbols
+
+# Obfuscation related
+app.*.map.json
+
+# Android Studio will place build artifacts here
+**/android/app/debug
+**/android/app/profile
+**/android/app/release
+
+# Android / Gradle (archivos locales y de caché)
+**/android/.gradle/
+**/android/local.properties
+**/android/key.properties
+*.jks
+*.keystore
+
+# Widget Preview related
+.widget_preview/
+
+# ---------- Backend (Python / FastAPI) ----------
+# Credenciales y variables de entorno
+backend/.env
+backend/_.env
+backend/.env.*
+!backend/.env.example
+
+# Entornos virtuales
+backend/venv/
+backend/.venv/
+backend/env/
+venv/
+.venv/
+
+# Caché y archivos generados de Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
