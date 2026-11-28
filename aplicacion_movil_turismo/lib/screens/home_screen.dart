@@ -10,6 +10,7 @@ import '../services/api_service.dart';
 import '../components/destination_card.dart';
 import '../components/custom_search_bar.dart';
 import '../components/bottom_nav_bar.dart';
+import 'mi_viaje_screen.dart';
 
 /// Pantalla principal de la aplicación
 /// Muestra la lista de destinos turísticos de Ica con búsqueda
@@ -122,7 +123,7 @@ class _HomeScreenState extends State<HomeScreen> {
         children: [
           _buildHomeTab(),
           _buildPlaceholder('Destinos', Icons.explore),
-          _buildPlaceholder('Mi viaje', Icons.map),
+          const MiViajeScreen(),
           _buildPlaceholder('Viajes', Icons.luggage),
           _buildPlaceholder('Perfil', Icons.person),
         ],
