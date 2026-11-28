@@ -16,7 +16,11 @@ class ApiService {
   ApiService._();
 
   // URL base del backend
-  static const String _baseUrl = 'http://192.168.1.80:8000';
+  // Se puede sobrescribir con --dart-define=API_BASE_URL=http://IP:8000
+  static const String _baseUrl = String.fromEnvironment(
+    'API_BASE_URL',
+    defaultValue: 'http://192.168.1.80:8000',
+  );
 
   // Tiempo máximo de espera para cada petición HTTP
   static const Duration _timeout = Duration(seconds: 3);
@@ -57,8 +61,7 @@ class ApiService {
     {
       'id_destino': 1,
       'nombre': 'Laguna de Huacachina',
-      'descripcion':
-          'Oasis natural rodeado de dunas, ideal para sandboard y paseos en tubular.',
+      'descripcion': 'Oasis natural rodeado de dunas, ideal para sandboard y paseos en tubular.',
       'ubicacion': 'Huacachina, Ica, Perú',
       'horario': 'Abierto todo el día',
       'precio_entrada': 0,
@@ -68,8 +71,7 @@ class ApiService {
     {
       'id_destino': 2,
       'nombre': 'Parque Temático de Cachiche',
-      'descripcion':
-          'Parque temático basado en leyendas locales, con la famosa escultura de la bruja de Cachiche.',
+      'descripcion': 'Parque temático basado en leyendas locales, con la famosa escultura de la bruja de Cachiche.',
       'ubicacion': 'Cachiche, Ica, Perú',
       'horario': '8:00 AM - 6:00 PM',
       'precio_entrada': 0,
@@ -79,8 +81,7 @@ class ApiService {
     {
       'id_destino': 3,
       'nombre': 'Hacienda Tacama',
-      'descripcion':
-          'La bodega más antigua de América, especializada en la producción de vinos y piscos premium.',
+      'descripcion': 'La bodega más antigua de América, especializada en la producción de vinos y piscos premium.',
       'ubicacion': 'La Tacama, Ica, Perú',
       'horario': '9:00 AM - 5:00 PM',
       'precio_entrada': 0,
@@ -90,8 +91,7 @@ class ApiService {
     {
       'id_destino': 4,
       'nombre': 'Cañón de los Perdidos',
-      'descripcion':
-          'Impresionante cañón con paredes de roca ideales para rappel, caminatas y deportes extremos.',
+      'descripcion': 'Impresionante cañón con paredes de roca ideales para rappel, caminatas y deportes extremos.',
       'ubicacion': 'Los Aquijes, Ica, Perú',
       'horario': '7:00 AM - 4:00 PM',
       'precio_entrada': 0,
@@ -101,8 +101,7 @@ class ApiService {
     {
       'id_destino': 5,
       'nombre': 'Santuario del Señor de Luren',
-      'descripcion':
-          'Templo principal de Ica que alberga la imagen del Señor de Luren, patrón de la ciudad.',
+      'descripcion': 'Templo principal de Ica que alberga la imagen del Señor de Luren, patrón de la ciudad.',
       'ubicacion': 'Centro de Ica, Perú',
       'horario': '6:00 AM - 8:00 PM',
       'precio_entrada': 0,
@@ -112,8 +111,7 @@ class ApiService {
     {
       'id_destino': 6,
       'nombre': 'Bosque de Piedras',
-      'descripcion':
-          'Formaciones rocosas naturales con figuras caprichosas esculpidas por el viento y el tiempo.',
+      'descripcion': 'Formaciones rocosas naturales con figuras caprichosas esculpidas por el viento y el tiempo.',
       'ubicacion': 'Subtanjalla, Ica, Perú',
       'horario': '8:00 AM - 5:00 PM',
       'precio_entrada': 0,
@@ -123,8 +121,7 @@ class ApiService {
     {
       'id_destino': 7,
       'nombre': 'Palmera de las 7 Cabezas',
-      'descripcion':
-          'Palmera datilera única en el mundo con siete cabezas, considerada patrimonio natural de Ica.',
+      'descripcion': 'Palmera datilera única en el mundo con siete cabezas, considerada patrimonio natural de Ica.',
       'ubicacion': 'San Juan Bautista, Ica, Perú',
       'horario': 'Abierto todo el día',
       'precio_entrada': 0,
@@ -134,8 +131,7 @@ class ApiService {
     {
       'id_destino': 8,
       'nombre': 'Fiesta de la Vendimia',
-      'descripcion':
-          'Celebración anual en honor a la cosecha de uva, con elección de reina, desfiles y degustación de vinos.',
+      'descripcion': 'Celebración anual en honor a la cosecha de uva, con elección de reina, desfiles y degustación de vinos.',
       'ubicacion': 'Plaza de Armas de Ica, Perú',
       'horario': 'Marzo (evento anual)',
       'precio_entrada': 0,
@@ -145,8 +141,7 @@ class ApiService {
     {
       'id_destino': 9,
       'nombre': 'Procesión del Señor de Luren',
-      'descripcion':
-          'Tradición religiosa centenaria donde la imagen del Señor de Luren recorre las calles de Ica.',
+      'descripcion': 'Tradición religiosa centenaria donde la imagen del Señor de Luren recorre las calles de Ica.',
       'ubicacion': 'Centro de Ica, Perú',
       'horario': 'Septiembre (evento anual)',
       'precio_entrada': 0,
@@ -156,8 +151,7 @@ class ApiService {
     {
       'id_destino': 10,
       'nombre': 'Museo Adolfo Bermúdez Jenkins',
-      'descripcion':
-          'Museo regional que alberga una importante colección arqueológica de las culturas Paracas, Nazca e Ica.',
+      'descripcion': 'Museo regional que alberga una importante colección arqueológica de las culturas Paracas, Nazca e Ica.',
       'ubicacion': 'Centro de Ica, Perú',
       'horario': '8:00 AM - 5:00 PM',
       'precio_entrada': 0,
@@ -167,8 +161,7 @@ class ApiService {
     {
       'id_destino': 11,
       'nombre': 'Parque de la Palma',
-      'descripcion':
-          'Parque ubicado frente a la Universidad Nacional San Luis Gonzaga, conocido por su emblemática palmera.',
+      'descripcion': 'Parque ubicado frente a la Universidad Nacional San Luis Gonzaga, conocido por su emblemática palmera.',
       'ubicacion': 'Frente a la UNICA, Ica, Perú',
       'horario': 'Abierto todo el día',
       'precio_entrada': 0,
@@ -206,12 +199,16 @@ class ApiService {
         debugPrint('✅ [API] ${data.length} destinos cargados desde la API');
         return data.map((json) => Destination.fromJson(json)).toList();
       } else {
-        debugPrint('⚠ [API] Error HTTP ${response.statusCode}, usando fallback');
+        debugPrint(
+          '⚠ [API] Error HTTP ${response.statusCode}, usando fallback',
+        );
         return _getFallbackDestinos(idCategoria: idCategoria, buscar: buscar);
       }
     } catch (e) {
       debugPrint('❌ [API] Error de conexión: $e');
-      debugPrint('📦 [API] Usando datos de respaldo (${_fallbackDestinos.length} destinos)');
+      debugPrint(
+        '📦 [API] Usando datos de respaldo (${_fallbackDestinos.length} destinos)',
+      );
       return _getFallbackDestinos(idCategoria: idCategoria, buscar: buscar);
     }
   }
@@ -230,7 +227,9 @@ class ApiService {
         debugPrint('✅ [API] Destino $id cargado desde la API');
         return Destination.fromJson(json.decode(response.body));
       } else {
-        debugPrint('⚠ [API] Error HTTP ${response.statusCode}, usando fallback');
+        debugPrint(
+          '⚠ [API] Error HTTP ${response.statusCode}, usando fallback',
+        );
         return _getFallbackDestinoById(id);
       }
     } catch (e) {
@@ -255,13 +254,19 @@ class ApiService {
         debugPrint('✅ [API] ${data.length} categorías cargadas desde la API');
         return data.map((json) => Category.fromJson(json)).toList();
       } else {
-        debugPrint('⚠ [API] Error HTTP ${response.statusCode}, usando fallback');
-        return _fallbackCategorias.map((json) => Category.fromJson(json)).toList();
+        debugPrint(
+          '⚠ [API] Error HTTP ${response.statusCode}, usando fallback',
+        );
+        return _fallbackCategorias
+            .map((json) => Category.fromJson(json))
+            .toList();
       }
     } catch (e) {
       debugPrint('❌ [API] Error de conexión: $e');
       debugPrint('📦 [API] Usando categorías de respaldo');
-      return _fallbackCategorias.map((json) => Category.fromJson(json)).toList();
+      return _fallbackCategorias
+          .map((json) => Category.fromJson(json))
+          .toList();
     }
   }
 
@@ -273,8 +278,9 @@ class ApiService {
     int? idCategoria,
     String? buscar,
   }) {
-    List<Destination> destinos =
-        _fallbackDestinos.map((json) => Destination.fromJson(json)).toList();
+    List<Destination> destinos = _fallbackDestinos
+        .map((json) => Destination.fromJson(json))
+        .toList();
 
     if (idCategoria != null) {
       destinos = destinos.where((d) => d.idCategoria == idCategoria).toList();
@@ -302,5 +308,175 @@ class ApiService {
       }
     }
     throw Exception('Destino con id=$id no encontrado en datos de respaldo');
+  }
+
+  // ============================================================
+  //  Conexiones a la API de itinerarios (modulo Mi viaje)
+  //  El modulo Mi viaje guarda datos de forma local; estos metodos
+  //  exponen el backend cuando esta disponible.
+  // ============================================================
+
+  static final Map<String, String> _jsonHeaders = {
+    'Content-Type': 'application/json',
+  };
+
+  // Crea un itinerario. Requiere id_usuario valido en el backend.
+  static Future<Map<String, dynamic>?> crearItinerarioApi({
+    required int idUsuario,
+    required String nombre,
+    required String fechaInicio,
+    required String fechaFin,
+    double? presupuestoEstimado,
+  }) async {
+    try {
+      final response = await http
+          .post(
+            Uri.parse('$_baseUrl/itinerarios'),
+            headers: _jsonHeaders,
+            body: json.encode({
+              'id_usuario': idUsuario,
+              'nombre': nombre,
+              'fecha_inicio': fechaInicio,
+              'fecha_fin': fechaFin,
+              'presupuesto_estimado': presupuestoEstimado,
+            }),
+          )
+          .timeout(_timeout);
+      if (response.statusCode == 201) {
+        return json.decode(response.body) as Map<String, dynamic>;
+      }
+      debugPrint('[API] crearItinerarioApi HTTP ${response.statusCode}');
+      return null;
+    } catch (e) {
+      debugPrint('[API] crearItinerarioApi error: $e');
+      return null;
+    }
+  }
+
+  // Lista itinerarios de un usuario.
+  static Future<List<Map<String, dynamic>>> listarItinerariosUsuarioApi(
+    int idUsuario,
+  ) async {
+    try {
+      final response = await http
+          .get(Uri.parse('$_baseUrl/usuarios/$idUsuario/itinerarios'))
+          .timeout(_timeout);
+      if (response.statusCode == 200) {
+        final data = json.decode(response.body) as List<dynamic>;
+        return data.cast<Map<String, dynamic>>();
+      }
+      debugPrint(
+        '[API] listarItinerariosUsuarioApi HTTP ${response.statusCode}',
+      );
+      return const [];
+    } catch (e) {
+      debugPrint('[API] listarItinerariosUsuarioApi error: $e');
+      return const [];
+    }
+  }
+
+  // Obtiene un itinerario con sus detalles.
+  static Future<Map<String, dynamic>?> obtenerItinerarioApi(
+    int idItinerario,
+  ) async {
+    try {
+      final response = await http
+          .get(Uri.parse('$_baseUrl/itinerarios/$idItinerario'))
+          .timeout(_timeout);
+      if (response.statusCode == 200) {
+        return json.decode(response.body) as Map<String, dynamic>;
+      }
+      debugPrint('[API] obtenerItinerarioApi HTTP ${response.statusCode}');
+      return null;
+    } catch (e) {
+      debugPrint('[API] obtenerItinerarioApi error: $e');
+      return null;
+    }
+  }
+
+  // Actualiza un itinerario.
+  static Future<bool> actualizarItinerarioApi({
+    required int idItinerario,
+    required String nombre,
+    required String fechaInicio,
+    required String fechaFin,
+    double? presupuestoEstimado,
+  }) async {
+    try {
+      final response = await http
+          .put(
+            Uri.parse('$_baseUrl/itinerarios/$idItinerario'),
+            headers: _jsonHeaders,
+            body: json.encode({
+              'nombre': nombre,
+              'fecha_inicio': fechaInicio,
+              'fecha_fin': fechaFin,
+              'presupuesto_estimado': presupuestoEstimado,
+            }),
+          )
+          .timeout(_timeout);
+      return response.statusCode == 200;
+    } catch (e) {
+      debugPrint('[API] actualizarItinerarioApi error: $e');
+      return false;
+    }
+  }
+
+  // Elimina un itinerario (sus detalles se eliminan en cascada en backend).
+  static Future<bool> eliminarItinerarioApi(int idItinerario) async {
+    try {
+      final response = await http
+          .delete(Uri.parse('$_baseUrl/itinerarios/$idItinerario'))
+          .timeout(_timeout);
+      return response.statusCode == 204;
+    } catch (e) {
+      debugPrint('[API] eliminarItinerarioApi error: $e');
+      return false;
+    }
+  }
+
+  // Agrega un destino a un dia del itinerario.
+  static Future<Map<String, dynamic>?> agregarDetalleApi({
+    required int idItinerario,
+    required int idDestino,
+    required String fechaVisita,
+    String? horaVisita,
+    String? actividad,
+  }) async {
+    try {
+      final response = await http
+          .post(
+            Uri.parse('$_baseUrl/itinerarios/$idItinerario/detalles'),
+            headers: _jsonHeaders,
+            body: json.encode({
+              'id_destino': idDestino,
+              'fecha_visita': fechaVisita,
+              'hora_visita': horaVisita,
+              'actividad': actividad,
+            }),
+          )
+          .timeout(_timeout);
+      if (response.statusCode == 201) {
+        return json.decode(response.body) as Map<String, dynamic>;
+      }
+      debugPrint('[API] agregarDetalleApi HTTP ${response.statusCode}');
+      return null;
+    } catch (e) {
+      debugPrint('[API] agregarDetalleApi error: $e');
+      return null;
+    }
+  }
+
+  // Quita un detalle del itinerario.
+  static Future<bool> eliminarDetalleApi(int idDetalle) async {
+    try {
+      final response = await http
+          .delete(Uri.parse('$_baseUrl/detalles/$idDetalle'))
+          .timeout(_timeout);
+      return response.statusCode == 204;
+    } catch (e) {
+      debugPrint('[API] eliminarDetalleApi error: $e');
+      return false;
+    }
   }
 }
